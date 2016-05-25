@@ -5,7 +5,7 @@ module.exports = {
   devtool: 'source-map',
   entry: [
     
-    './client/reduxstagram'
+    './client/index'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -35,9 +35,9 @@ module.exports = {
     },
     // CSS
     { 
-      test: /\.styl$/, 
+      test: /\.sass$/, 
       include: path.join(__dirname, 'client'),
-      loader: 'style-loader!css-loader!stylus-loader'
+      loaders: ['style', 'css', 'sass']
     }
     ]
   }
