@@ -1,12 +1,230 @@
 /*write styles here*/
 
+*
+  box-sizing: border-box
+
 body
-	background: #f9f9f9
+  margin: 0
+  background: #f9f9f9
+  font-family: 'Raleway', sans-serif
+  letter-spacing: 2px
+  font-weight: 500
 
-h1
-	color: #fc0
-	margin: 10px
+a
+  text-decoration: none
+  color: #888
 
-p
-	color: #888
-	margin: 10px
+ul
+  margin: 0
+  padding: 0
+  list-style: none
+
+header
+  padding: 10px 0
+  background: #fff
+  box-shadow: 1px 2px 4px #888
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+    display: flex
+    align-items: center
+    li
+      color: #888
+      background: #fff
+      flex: 1
+      padding: 5px 0 0 0
+      text-align: center
+      &.left
+        font-size: 28px
+        font-family: 'Pathway Gothic One', sans-serif
+        padding: 0
+        line-height: 43px
+        .bg-red
+          background: red
+          color: #fff
+          font-size: 28px
+          padding: 4px
+          border-radius: 10px
+          box-shadow: 0px 1px 5px #888
+        .small-font
+          font-size: 10px
+          font-weight: bold
+      &.center
+        position: relative
+        flex: 3
+        i
+          position: absolute
+          top: 10px
+          left: 0
+          font-size: 24px
+          transition: all 0.5s
+        input
+          font-family: 'Abel', sans-serif
+          width: 100%
+          padding: 5px
+          padding-left: 30px
+          font-size: 20px
+          outline: none
+          color: #888
+          border: none
+          border-bottom: 2px solid #ccc
+          transition: all 0.5s
+          &:focus
+            border-color: #ff0000
+            &~i
+              color: #ff0000
+      &.right
+        flex: 1
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        a
+          text-decoration: none
+          background: #dd0000
+          color: #fff
+          padding: 10px
+          font-size: 10px
+          top: 0px
+          width: 150px
+          right: -10px
+          text-align: center
+          font-weight: bold
+          transition: all 0.12s
+          box-shadow: 1px 2px 5px #888
+          &:hover
+            background: red
+            box-shadow: 1px 2px 10px #888
+.wrapper
+  min-height: 77vh
+  margin: 20px 0 0 0
+.container
+  margin: 0 auto
+  width: 80%
+  display: flex
+  min-height: 77vh
+  .video-details
+    flex: 2
+    min-height: 100%
+    padding: 10px
+    margin-right: 20px
+    background: #fff
+    box-shadow: -1px 2px 5px #888, 2px 3px 5px #888        
+    .player
+      height: 350px
+      border: 1px solid red
+    .info
+      h1,p
+        margin: 10px
+        font-family: 'Source Sans Pro', sans-serif
+      h1
+        color: #444
+        font-size: 20px
+      p
+        font-size: 14px
+        color: #888
+  .video-list::-webkit-scrollbar
+    width: 10px
+  .video-list::-webkit-scrollbar-track
+    background: #444
+    border-radius: 7px
+  .video-list::-webkit-scrollbar-thumb
+    background-color: #ccc
+    outline: 2px solid slategrey
+    border-radius: 7px
+  .video-list
+    background: #fff
+    box-shadow: -1px 2px 5px #888, 2px 3px 5px #888
+    padding: 10px
+    flex: 1
+    height: 77vh
+    overflow: hidden
+    overflow-y: auto
+    .video-list-item
+      height: 100px
+      margin: 10px 5px
+      box-shadow: -1px 2px 5px #888, 2px 3px 5px #888
+      a
+        display: flex
+        width: 100%
+      .preview-img
+        flex: 1
+        border: 1px solid #fd6ca3
+        height: 100px
+      .title
+        flex: 2
+        display: flex
+        justify-content: center
+        align-items: center
+        font-size: 10px
+
+footer
+  padding: 18px 0
+  margin: 0
+  text-align: center
+  p
+    margin: 0
+    padding: 0
+    font-size: 12px
+    color: #888
+
+@media(max-width: 1024px)
+  .wrapper
+    .container
+      width: 90%
+  header
+    ul
+      li
+        &.right
+          a
+            width: 100px
+
+@media(max-width: 600px)
+  .wrapper
+    margin: 5px auto
+    .container
+      width: 100%
+      flex-direction: column
+      .video-details
+        width: 100%
+        transition: all 0.2s
+        order: 1
+        .player
+          height: 300px
+      .video-list
+        background: transparent
+        overflow-x: auto
+        height: 100%
+        box-shadow: 0 0 0
+        display: flex
+        &::-webkit-scrollbar
+          height: 7px
+        .video-list-item
+          box-shadow: 1px 2px 5px #888
+          background: #fff
+          a
+            width: 250px
+  header
+    ul
+      li
+        &.center
+          margin-right: 20px
+        &.right
+          display: none
+
+
+@media(max-width: 480px)
+  .video-list
+    &::-webkit-scrollbar
+      display: none
+  header
+    ul
+      flex-direction: column
+      li
+        flex: 1
+        &.center
+          margin: 0
+          width: 95%
+        &.right
+          
