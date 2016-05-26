@@ -9,7 +9,7 @@ export default class SearchBar extends Component {
 	}
 	onInputChange(e){
 		this.setState({term:e.target.value});
-		this.props.onSearchTermChange(this.state.term);
+		this.props.onSearchTermChange(e.target.value);
 	}
 	render() {
 		return (
